@@ -12,6 +12,6 @@ artifacts:
   type: zip
   files:
     - pdftotxt.yaml
-    - lambdaoutput.yaml
+    - packaged.yaml
 
 
