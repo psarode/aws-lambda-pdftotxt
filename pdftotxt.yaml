@@ -17,9 +17,6 @@ Resources:
         Variables:
           TARGET_BUCKET: aws-content-store-s3-bucket-346481752143-us-east-1-an
 
-      Layers:
-        - arn:aws:lambda:ap-northeast-1:844028273225:layer:tika:1
-
       Events:
         S3UploadTrigger:
           Type: S3
