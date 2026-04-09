@@ -11,20 +11,12 @@ Resources:
       CodeUri: .
       MemorySize: 512
       Timeout: 900
-      Role: arn:aws:iam::346481752143:role/lambda_s3
+      Policies:
+        - S3ReadPolicy:
+            BucketName: aws-pdf-source
+        - S3WritePolicy:
+            BucketName: aws-content-store-s3-bucket-346481752143-us-east-1-an
 
       Environment:
         Variables:
           TARGET_BUCKET: aws-content-store-s3-bucket-346481752143-us-east-1-an
-
-      Events:
-        S3UploadTrigger:
-          Type: S3
-          Properties:
-            Bucket: aws-pdf-source
-            Events: s3:ObjectCreated:*
-            Filter:
-              S3Key:
-                Rules:
-                  - Name: suffix
-                    Value: .pdf
